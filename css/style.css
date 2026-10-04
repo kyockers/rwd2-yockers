@@ -1,0 +1,157 @@
+/* Base */
+
+.video-credit {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* 
+body is an element selector.
+This ruleset removes default margins around the element, declares the default typeface, and sets line height
+and background color.
+*/
+body {
+  margin: 0;                                  /* Removes browser default margin */
+  font-family: Arial, Helvetica, sans-serif;  /* Clean, readable sans-serif stack */
+  line-height: 1.6;                           /* Improves text readability */
+  background: #fff2c1;                      /* Light yellow base background */
+}
+
+/* 
+h1 is an element selector.
+This ruleset centers text horizontally on the page, and adds an 8px margin below <h1>.
+*/
+/* Main heading */
+h1 {
+  text-align: center;    /* Centers the heading */
+  margin: 0 0 8px;       /* No top margin, small space below */
+}
+
+/* 
+p.lead is a descendent selector.
+This ruleset centers text horizontally on the page, adds an 18px margin below <p>, and sets texst color.
+*/
+p.lead {
+  text-align: center;    /* Centers the intro text */
+  margin: 0 0 18px;      /* Space below paragraph */
+  color: #333;           /* Softer than pure black, still high contrast */
+}
+
+/*
+.container is a class selector.
+This ruleset sets the continer's maxiumum width, adds an auto margin to center content in the container,
+and adds 25px of padding around the container's contents.
+*/
+.container {
+  max-width: 1100px;     /* Stops content stretching too wide on big screens */
+  margin: 0px auto;     /* 0px top/bottom, auto left/right = centered */
+  padding: 25px;         /* Internal spacing */
+}
+
+/*  ------------------------------------------------------------------------------------------------------------- */
+
+/* .rwd-img is a class selector.
+This ruleset sets the styles the hero image. 
+*/
+
+/* =========================================
+    RESPONSIVE IMAGE
+   ========================================= */
+.rwd-img {
+  width: 100%;           /* Image fills its container width */
+  height: auto;          /* Keeps the original aspect ratio */
+  display: block;        /* Removes inline gap under the image */
+  border-radius: 12px;   /* Soft rounded corners */
+  margin: 18px 0;        /* Space above and below image */
+} 
+
+
+/* =========================================
+    RESPONSIVE VIDEO
+    Wrapper holds a fixed 16:9 shape; the
+    video/iframe fills it completely.
+   ========================================= */
+
+/* .video-wrap is an element selector.
+This ruleset styles the video player and makes it responsive.
+*/
+  .video-wrap {
+    width: 100%;           /* Full width of the container */
+    aspect-ratio: 16 / 9;  /* Modern way to lock a 16:9 ratio */
+    background: rgb(0, 0, 0);      /* Fallback color while the video loads */
+    border-radius: 12px;   /* Rounded corners */
+    overflow: hidden;      /* Clips the video to the rounded edges */
+    margin-bottom: 24px;   /* Space below video */
+  }
+
+/* .video-wrap video and .video-wrap iframe are descendent selectors.
+This ruleset styles the video player.
+*/
+  .video-wrap video,
+  .video-wrap iframe {
+    width: 100%;           /* Fill the wrapper width */
+    height: 100%;          /* Fill the wrapper height */
+    border: 0;             /* Removes default iframe border */
+    display: block;        /* Removes inline gap */
+  }
+
+/* =========================================
+    CARDS WRAPPER (MOBILE FIRST)
+   ========================================= */
+
+/* 
+.cards and .card are class selectors.
+These rulesets style the cards.
+*/
+.cards {
+  display: flex;            /* Flex container for the cards */
+  flex-wrap: wrap;          /* Lets cards wrap onto new rows */
+  flex-direction: column;   /* MOBILE FIRST: stack cards vertically */
+  justify-content: center;  /* Centers cards horizontally in row */
+  gap: 20px;                /* Even spacing between cards */
+}
+
+/* Individual card */
+.card {
+  background: #fff;         /* White card background */
+  border-radius: 12px;      /* Soft rounded corners */
+  padding: 16px;            /* Inner spacing */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .08); /* Subtle depth */
+}
+
+
+/*
+@media are media queries.
+These rulesets assign width bounds and styling to page elements depending on the size of the display.
+*/
+/* =========================================
+    BREAKPOINT 1: TABLET (600px and up)
+   ========================================= */
+@media (min-width: 600px) {
+  body { background: #d8fabf; }   /* Confirms the tablet breakpoint is active */ /* turns green */
+
+  .cards { flex-direction: row; } /* Switch from stacked to side-by-side */
+
+  .card { width: 48%; }           /* ~2 cards per row (48% leaves room for the gap) */
+}
+
+/* =========================================
+    BREAKPOINT 2: DESKTOP (900px and up)
+    ========================================= */
+@media (min-width: 900px) {
+  body { background: #b1ceff; }   /* Confirms the desktop breakpoint is active */ /* turns blue */
+
+  .card { width: 30%; }           /* ~3 cards per row (30% leaves room for the gap) */
+}
+
+/* =========================================
+    BREAKPOINT 3: LARGE DESKTOP (1200px and up)
+    ========================================= */
+@media (min-width: 1200px) {
+  body { background: #cbb9ff; }   /* Confirms the large-desktop breakpoint is active */ /* turns purple */
+
+  .container { padding: 28px; }   /* More breathing room on big screens */
+
+  .card { width: 22%; }           /* ~4 cards per row (22% leaves room for the gap) */
+}
