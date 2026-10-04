@@ -1,2 +1,4 @@
-# rwd2-yockers
-A responsive layout that includes a container, a responsive image, and a responsive embedded video using media queries.
+A responsive layout that uses media queries, and includes a responsive hero image,<br>
+a responsive video embedded from Youtube, and a responsive card gallery.
+
+Created by Kim Yockers, based on Web Page Design II Module 6: Responsive Images + Responsive Video example code.
